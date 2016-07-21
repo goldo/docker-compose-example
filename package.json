@@ -1,13 +1,13 @@
 {
-  "name": "docker_web_app",
+  "name": "docker-compose-example",
+  "author": "Franck Achkouyan",
   "version": "1.0.0",
-  "description": "Node.js on Docker",
-  "main": "server.js",
+  "description": "Node.js & MongoDB on Docker Compose",
   "scripts": {
     "start": "node app.js"
   },
   "dependencies": {
-    "express": "^4.13.3",
+    "express": "latest",
     "body-parser": "latest",
     "mongodb": "latest" 
  }
