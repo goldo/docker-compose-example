@@ -8,7 +8,7 @@ var db;
 MongoClient.connect(url, function (err, database) {
     if(err) console.log(err);
     else {
-      console.log("Connected correctly to server");
+      console.log("DB Connected correctly to the server");
       db = database;
     }
 });
@@ -22,6 +22,10 @@ var insertDocument = function (db, document, callback) {
     });
 };
 
+app.get('/', function(req, res) {
+  res.send('/hello');
+});
+
 app.post('/hello', function (req, res) {
     var data = req.body;
     insertDocument(db, data, function(err, result) {
@@ -32,7 +36,7 @@ app.post('/hello', function (req, res) {
 app.get('/hello', function (req, res) {
     db.collection('documents').find().toArray(function (err, results) {
       if (err) {
-	return res.send(err);
+        return res.send(err);
       } else if (results.length) {
         return res.send(JSON.stringify(results));
       } else {
@@ -41,4 +45,6 @@ app.get('/hello', function (req, res) {
    });
 });
 
-app.listen(process.env.PORT || 3000);
+app.listen(process.env.PORT || 3000, function () {
+  console.log('Server is listening on port ', process.env.PORT || 3000);
+});
