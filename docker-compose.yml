@@ -6,7 +6,7 @@ services:
       - "27017:27017"
   web:
     build: .
-    image: docker-compose-example:v0.1
+    image: docker-compose-example:v0.2
     command: npm start
     volumes:
       - .:/app
