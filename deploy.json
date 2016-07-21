@@ -1,0 +1,11 @@
+{
+    "port": "8555",
+    "deploys": [{
+        "name": "Webhook Deployer",
+        "type": "github",
+        "repo": "https://github.com/goldo/docker-compose-example",
+        "basepath": "/home/franck/ysa/",
+        "command": "git pull; docker-compose build; docker-compose up -d",
+        "branch": "master"
+    }]
+}
