@@ -4,9 +4,10 @@ services:
     image: mongo:latest
     ports:
       - "27017:27017"
+    restart: always
   web:
     build: .
-    image: docker-compose-example:v0.2
+    image: docker-compose-example:v0.3
     command: npm start
     volumes:
       - .:/app
