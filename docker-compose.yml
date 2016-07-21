@@ -1,19 +1,22 @@
-db:
-  image: mongo:latest
-  ports:
-    - "27017:27017"
-web:
-  build: .
-  command: npm start
-  volumes:
-    - .:/app
-  ports:
-    - "8080:8080"
-  links:
-    - db
-  environment:
-    NODE_ENV: production
-    PORT: 8080
-    MONGO_URL: mongodb://db:27017
-  restart: always
+version: '2'
+services:
+  db:
+    image: mongo:latest
+    ports:
+      - "27017:27017"
+  web:
+    build: .
+    image: docker-compose-example:v0.1
+    command: npm start
+    volumes:
+      - .:/app
+    ports:
+      - "8080:8080"
+    links:
+      - db
+    environment:
+      NODE_ENV: production
+      PORT: 8080
+      MONGO_URL: mongodb://db:27017
+    restart: always
 
