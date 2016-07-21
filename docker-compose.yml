@@ -12,11 +12,8 @@ services:
       - .:/app
     ports:
       - "8080:8080"
-    links:
-      - db
     environment:
       NODE_ENV: production
       PORT: 8080
-      MONGO_URL: mongodb://db:27017
     restart: always
 
