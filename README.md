@@ -7,8 +7,7 @@ docker-compose up -d
 # Auto-deploy from github webhook
 
 ```
-npm install -g webhook-deployer
-webhook-deployer -c deploy.json -d
+npm run webhook
 ```
 
 On Github set this url

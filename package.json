@@ -4,7 +4,8 @@
   "version": "1.0.0",
   "description": "Node.js & MongoDB on Docker Compose",
   "scripts": {
-    "start": "node app.js"
+    "start": "node app.js",
+    "webhook": "npm install -g webhook-deployer; webhook-deployer -c deploy.json -d &"
   },
   "dependencies": {
     "express": "latest",
